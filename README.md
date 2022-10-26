@@ -1,1 +1,1 @@
-# Kokokotsu-Digital-Menu
+Kokokotsu Digital Menu (Vanilla)
