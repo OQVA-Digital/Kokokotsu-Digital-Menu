@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kokokotsu | Comic & Japanese Food</title>
+    <link rel="stylesheet" href="./main.css">
+    <script src="./main.js" defer></script>
+    <script src="./cart.js" defer></script>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- <section class="manga_sec" style="background-color: var(--light);">
+        <a href="#menu" class="intro_cta">Slide for the menu <div class="indicator"></div></a>
+        
+    </section> -->
+
+    <section class="menu_sec" id="menu">
+        <div class="content">
+            <!-- <img class="logo" src="assets/logo.png" alt="Logo Kokokotsu" loading="lazy" draggable="false">
+     -->
+            <picture class="logo" loading="lazy">
+                <source srcset="assets/logo.webp" type="image/webp">
+                <source srcset="assets/logo.png" type="image/png">
+                <img src="assets/logo.png" alt="Kokokotsu Logo" draggable="false">
+            </picture>
+
+
+            <section class="cart_sec">
+                <div class="neon"></div>
+
+                <div class="top_back_to_menu" role="button" onclick="toggleCart()">
+                </div>
+
+                <div class="content">
+                    <picture class="logo_cart" loading="lazy">
+                        <source srcset="assets/logo.webp" type="image/webp">
+                        <source srcset="assets/logo.png" type="image/png">
+                        <img src="assets/logo.png" alt="Kokokotsu Logo" draggable="false">
+                    </picture>
+        
+                    <article class="order_summary">
+                        <div class="captions">
+                            <div class="column first">Item</div>
+                            <div class="column second">Qty</div>
+                            <div class="column third">Price</div>
+                            <div class="column fourth">Filling(s)</div>
+                        </div>
+
+                        <!-- <div class="item">
+                            <div class="item_flex">
+                                <span class="column first">
+                                    <button class="remove_item edamame" title="Remove item" onclick="updateCart('remove', 'Edamame')">
+                                        <div></div>
+                                    </button>
+                                    Edamame
+                                </span>
+                                <div class="column second edamame_display_amount">0</div>
+                                <div class="column third edamame_display_price">£0</div>
+                                <div class="column fourth">-</div>
+                            </div>
+                        </div> -->
+
+                        <div class="item">
+                            <div class="item_flex">
+                                <span class="column first">
+                                    <!-- <button class="remove_item gyoza" title="Remove item" onclick="updateCart('remove', 'last')">
+                                        <div></div>
+                                    </button> -->
+                                    Gyoza
+                                </span>
+                                <div class="column second gyoza_display_amount">0</div>
+                                <div class="column third gyoza_display_price">£0</div>
+                                <div class="column fourth gyoza_filling_menu"><span class="empty_sign">-</span></div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="item">
+                            <div class="item_flex">
+                                <span class="column first">
+                                    <button class="remove_item mochi" title="Remove item" onclick="updateCart('remove', 'Mochi')">
+                                        <div></div>
+                                    </button>
+                                    Mochi
+                                </span>
+                                <div class="column second mochi_display_amount">0</div>
+                                <div class="column third mochi_display_price">£0</div>
+                                <div class="column fourth">-</div>
+                            </div>
+                        </div> -->
+
+                        <div class="result">
+                            <div>
+                                <span class="column first">Total</span>
+                                <div class="column second total_display_amount">0</div>
+                                <div class="column third total_display_price"><p>£0</p></div>
+                                <div class="column fourth"></div>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <article class="input_ctnr">
+                        <div class="name_input">
+                            <p>Your name:</p>
+                            <input type="text" name="user_name" id="user_name" maxlength="20" minlength="1">
+                        </div>
+
+                        <!-- <div>
+                            <p>Table No.:</p>
+                            <input type="number" min="1" max="35" placeholder="1-35">
+                        </div> -->
+                    </article>
+
+                    <button type="submit" class="receipt_generate">Confirm & Pay</button>
+                </div>
+
+                <div class="checkout_footer">
+
+                    <div role="button" class="clear_cart" onclick="updateCart('remove', 'All')">Clear<br/>order</div>
+
+                    <div class="back_to_menu" role="button" onclick="toggleCart()">
+                        <div>
+                            <span></span>
+                        </div>
+                        Edit your order
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+
+
+            <div class="left_ctnr">
+                <div class="slogan_ctnr">
+                    <div class="social_bts">
+                        <a href="https://instagram.com/kokokotsu.co" target="_blank" class="instagram_bt" rel="external"></a>
+
+                        <a href="https://www.tiktok.com/@kokokotsu.co" target="_blank" class="tiktok_bt" rel="external"></a>
+                    </div>
+    
+                    <h1 class="slogan">Japan<br>in<br>a<br>pan.</h1>
+                </div>
+
+                <div class="menu_address_ctnr">
+                    <ul class="menu_ctnr">
+
+                        <!-- FAQ COMBO UPDATE -->
+        
+                        <!-- <li class="combo_li">
+                            <div>
+                                <h2>Edamame + Gyoza + Mochi + Cocktail</h2>
+                                
+                                <div class="deal_price">
+                                    <span class="price">£25</span>
+                                </div>
+                            </div>
+                        </li> -->
+                        
+                        <div class="divider hidden_desktop"></div>
+                        
+        
+                        <!-- FAQ DRINKS UPDATE -->
+
+                        <!-- <li class="drinks_ctnr">
+                            <div class="divider hidden_desktop"></div>
+
+                            <div>
+                                <h2>Kokokocktails</h2>
+                                <div class="divider"></div>
+                                <div class="price_ctnr">
+                                    <span class="price">£10</span>
+                                </div>
+                            </div>
+
+                            <sub>
+                                <ul>
+                                    <li>
+                                        <h3 class="highlight">Yorokobi</h3>
+                                        <p>A delightfully refreshing sake highball, punchy yet pleasant.</p>
+                                    </li>
+
+                                    <li>
+                                        <h3>Pornstar Martini</h3>
+                                    </li>
+
+                                    <li>
+                                        <h3>Espresso Martini</h3>
+                                    </li>
+
+                                    <li>
+                                        <h3>Gin Rickey</h3>
+                                    </li>
+
+                                    <li>
+                                        <h3>Tommy's Margarita</h3>
+                                    </li>
+                                </ul>
+                            </sub>
+                        </li>
+
+                        <div class="divider deal_divider"></div> -->
+                        
+                        <!-- END FAQ DRINKS UPDATE -->
+
+                        <!-- <li>
+                            <div>
+                                <h2>Edamame</h2>
+                                <div class="divider"></div>
+                                <div class="price_ctnr">
+                                    <span class="price">£3</span>
+
+                                    <div class="quantity">
+                                        <button onclick="updateCart('remove', 'Edamame')">
+                                            <div></div>
+                                        </button>
+
+                                        <input id="edamameAmount" name="number" type="number" readonly value="0">
+                                        
+                                        <button onclick="updateCart('add', 'Edamame')">
+                                            <div></div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <sub>
+                                <p><strong>A handful of steamed soybeans with a salty kick.</strong></p>
+                                <p>Pop these bad boys straight into your mouth, don't eat the skin... unless you really, really want to.</p>
+                        </sub>
+                        </li> -->
+                        
+                        <li>
+                            <div>
+                                <h2>Gyoza</h2>
+                                <div class="divider"></div>
+                                <div class="price_ctnr">
+                                    <span class="price">£10</span>
+                                </div>
+                            </div>
+        
+                            <sub>
+                                <h3>Seven delicious pouches of umami goodness, crunchy on one side and soft on the other.</h3>
+                                <h4>We're not here to lie, using chopsticks does make you look cool... but Gyoza do taste better if just grab them with your hands.</h4>
+
+                                <ul class="flavours">
+                                    <li>
+                                        <span>Pork</span>
+                                        <div class="divider"></div>
+                                        <div class="price_ctnr">
+                                            <div class="quantity">
+                                                <button onclick="updateCart('remove', 'PorkGyoza')">
+                                                    <div></div>
+                                                </button>
+        
+                                                <input id="porkGyozaAmount" name="pork-gyoza-amount" type="number" readonly value="0">
+                                                
+                                                <button onclick="updateCart('add', 'PorkGyoza')">
+                                                    <div></div>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span>Chicken</span>
+                                        <div class="divider"></div>
+                                        <div class="price_ctnr">
+                                            <div class="quantity">
+                                                <button onclick="updateCart('remove', 'ChickenGyoza')">
+                                                    <div></div>
+                                                </button>
+        
+                                                <input id="chickenGyozaAmount" name="chicken-gyoza-amount" type="number" readonly value="0">
+                                                
+                                                <button onclick="updateCart('add', 'ChickenGyoza')">
+                                                    <div></div>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span>Vegetable</span>
+                                        <div class="divider"></div>
+                                        <div class="price_ctnr">
+                                            <div class="quantity">
+                                                <button onclick="updateCart('remove', 'VegetableGyoza')">
+                                                    <div></div>
+                                                </button>
+        
+                                                <input id="vegetableGyozaAmount" name="vegetable-gyoza-amount" type="number" readonly value="0">
+                                                
+                                                <button onclick="updateCart('add', 'VegetableGyoza')">
+                                                    <div></div>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span>Prawn</span>
+                                        <div class="divider"></div>
+                                        <div class="price_ctnr">
+                                            <div class="quantity">
+                                                <button onclick="updateCart('remove', 'PrawnGyoza')">
+                                                    <div></div>
+                                                </button>
+        
+                                                <input id="prawnGyozaAmount" name="prawn-gyoza-amount" type="number" readonly value="0">
+                                                
+                                                <button onclick="updateCart('add', 'PrawnGyoza')">
+                                                    <div></div>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span>Duck</span>
+                                        <div class="divider"></div>
+                                        <div class="price_ctnr">
+                                            <div class="quantity">
+                                                <button onclick="updateCart('remove', 'DuckGyoza')">
+                                                    <div></div>
+                                                </button>
+        
+                                                <input id="duckGyozaAmount" name="duck-gyoza-amount" type="number" readonly value="0">
+                                                
+                                                <button onclick="updateCart('add', 'DuckGyoza')">
+                                                    <div></div>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </sub>
+                        </li>
+        
+                        <!-- <li>
+                            <div>
+                                <h2>Mochi</h2>
+                                <div class="divider"></div>
+                                <div class="price_ctnr">
+                                    <span class="price">£4</span>
+
+                                    <div class="quantity">
+                                        <button onclick="updateCart('remove', 'Mochi')">
+                                            <div></div>
+                                        </button>
+
+                                        <input id="mochiAmount" name="number" type="number" readonly value="0">
+                                        
+                                        <button onclick="updateCart('add', 'Mochi')">
+                                            <div></div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <sub>
+                                <p><strong>A pair of sweet & chewy rice cakes filled with ice cream.</strong></p>
+                                <p>Think soft gummy + ice cream. Think chewy + melty. Think explosion of deliciousness. Got it? Ok, now order some.</p>
+                            </sub>
+                        </li> -->
+
+                        <!-- <div class="divider"></div>
+
+                        <li class="wines_ctnr">
+                            <div>
+                                <h2>Pints, Wines, and Spirits</h2>
+                                <div class="divider"></div>
+                                <div class="price_ctnr">
+                                    <span class="price">from £5</span>
+                                </div>
+                            </div>
+
+                            <sub>
+                                <p><strong>Are available but you only live once, so have a cocktail.</strong></p>
+                            </sub>
+                        </li> -->
+
+                    </ul>
+    
+                    <!-- <div class="bullets">
+                        <a class="address" target="_blank" rel="external">
+                            <div class="place"></div>
+                            <span>
+                                Find our vans around
+                            </span>
+                        </a>
+
+                        <a class="address" href="https://goo.gl/maps/J3HuNS7oyikY78At6" target="_blank" rel="external">
+                            <div class="place"></div>
+                            <span>
+                                Find us at FAQ | Market Square, Bicester, OX26 6AH
+                            </span>
+                        </a>
+
+                        <a class="address" href="https://goo.gl/maps/aUt3X5z2DHGu9Z7c7" target="_blank" rel="external">
+                            <div class="place"></div>
+                            <span>
+                                Find us at Also Known As | 54-56 Parsons Street, OX16 5NB
+                            </span>
+                        </a>
+    
+                        <div class="veg">
+                            <div></div>
+                            <span>
+                                Vegetarian Options Available
+                            </span>
+                        </div>
+
+                        <a class="job" href="./jobs.html">
+                            <div></div>
+                            <span>
+                                Work with us!
+                            </span>
+                        </a>
+                    </div> -->
+                    
+                    <div class="go_to_cart" role="button">
+                        <span class="counter">Your order <b>(0)</b> 🥟</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</body>
+</html>
